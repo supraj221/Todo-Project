@@ -5,10 +5,14 @@
     completed: boolean
   }
 */
-
+const dotenv = require("dotenv")
 const mongoose = require("mongoose");
+
 //put this in a .env file
-mongoose.connect("mongodb+srv://rajgijre:Supraj25@cluster0.hwuw8cg.mongodb.net/")
+dotenv.config({ path: "./config.env" });
+
+mongoose.connect("")
+
 const TodoSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -17,6 +21,6 @@ const TodoSchema = new mongoose.Schema({
 
 const Todo = mongoose.model("Todo", TodoSchema);
 
-module.exports({
+module.exports = {
   Todo
-})
+}
